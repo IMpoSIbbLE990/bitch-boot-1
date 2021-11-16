@@ -394,7 +394,7 @@ key: {
 						"mimetype": "image/jpeg",
 						"jpegThumbnail": dfrply //Gambarnye
 					},
-					"title": `${tampilUcapan} ${pushname}`, //Kasih namalu 
+					"title": `ɪ ᴀᴍ ʙᴏᴏsᴛ `, //Kasih namalu 
 					"description": `${tampilUcapan} ${pushname}`, 
 					"currencyCode": "USD",
 					"priceAmount1000": "2000",
@@ -415,7 +415,7 @@ const ftrol = {
                             itemCount : 123,
                             status: 1,
                             surface : 1,
-                            message: `${tampilUcapan} ${pushname}`, //Kasih namalu
+                            message: `ɪ ᴀᴍ ʙᴏᴏsᴛ `, //Kasih namalu
                             orderTitle: `${tampilUcapan} ${pushname}`,
                             thumbnail: dfrply, //Gambarnye
                             sellerJid: '0@s.whatsapp.net' 
@@ -581,7 +581,7 @@ message: {
                             itemCount : 2021,
                             status: 1,
                             surface : 1,
-                            message: `Developed by Denis Putra`, //Kasih namalu
+                            message: `ɪ ᴀᴍ ʙᴏᴏsᴛ `, //Kasih namalu
                             thumbnail: fs.readFileSync('./media/image/icon.jpg'), //Gambarnye
                             sellerJid: '0@s.whatsapp.net' 
                           }
@@ -3666,6 +3666,33 @@ break
 					reply(`Sukses membuat grup ${argz[0]}`)
                 }
 				break
+   case 'welcome': 
+              if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+	        if (!isGroup) return reply(mess.only.group)
+			if (!isOwner && !isGroupAdmins) return sticAdmin(from)
+					if (args[0] === 'on') {
+						if (isWelkom) return reply('Sudah Aktif Kak')
+						welkom.push(from)
+						fs.writeFileSync('./database/welkom.json', JSON.stringify(welkom))
+						reply('Sukses mengaktifkan fitur welcome')
+					} else if (args[0] === 'off') {
+						if (!isWelkom) return reply('Sudah Mati Kak')
+						var ini = welkom.indexOf(from)
+						welkom.splice(ini, 1)
+						fs.writeFileSync('./database/welkom.json', JSON.stringify(welkom))
+						reply('Sukses menonaktifkan fitur welcome')
+					} else if (!c){
+ anu =`Silahkan pilih salah satu\n\non: untuk mengaktifkan\noff: untuk menonaktifkan`
+punten = [{buttonId: 'welcome off', buttonText: {displayText: 'OFF✖️'}, type: 1},{buttonId: 'welcome on', buttonText: {displayText: 'ON✔️'}, type: 1}]
+const btngrass = {
+    contentText: `${anu}`,
+    footerText: '*_©IMP-XBOT_*',
+    buttons: punten,
+    headerType: 1
+}
+await denz.sendMessage(from, btngrass, MessageType.buttonsMessage, {quoted: ftrol})
+					}
+					break
 			case 'addrespon':
 			if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
 				if (args.length < 1) return reply(`Penggunaan ${prefix}addrespon hai|hai juga`)

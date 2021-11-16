@@ -69,7 +69,115 @@ fetch(`http://ip-api.com/line`).then(res => res.text())
         dtod = "6285774523785@s.whatsapp.net"
        otod = `${settings.NomorOwner}@s.whatsapp.net`
     })   
+    
+   //WELCOME ON /OFF YA ADICK ADICK//
+        denz.on('group-participants-update', async (anu) => {
+           mem = anu.participants[0]
+			const mdata = await denz.groupMetadata(anu.jid)
+		    try {
+			console.log(anu)
+			if (anu.action == 'add') {
+			const welkom = JSON.parse(fs.readFileSync('./database/welkom.json'))
+        	if(!welkom.includes(mdata.id)) return
+			fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {})}, message: { "contactMessage":{"displayName": `${mdata.subject}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;Denz;;;\nFN:Denz\nitem1.TEL;waid=6281337541779:6281337541779\nitem1.X-ABLabel:Mobile\nEND:VCARD` }}}
+		    num = anu.participants[0]
+			try {
+			ppimg = await denz.getProfilePicture(`${num.split('@')[0]}@c.us`)
+			} catch {
+			ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+			}
+			let buff = await getBuffer(ppimg)
+			masuk =`𝑿𝑿𝑿 Halo @${num.split('@')[0]}\nSelamat Datang Di ${mdata.subject}\n\n*Jangan Lupa Isi*\n*Nama* :\n*Umur* :\n*Gender* :\n*Askot* :\n\nEnjoy Jangan Lupa Kenalan 𝑿𝑿𝑿`
+			gbutsan = [{buttonId:'SERAH',buttonText:{displayText:'WELCOME BEBAN'},type:1}]
+			mhan = await denz.prepareMessage(mdata.id, buff, MessageType.image, {thumbnail: buff})
+const buttonMessages = { imageMessage: mhan.message.imageMessage,
+contentText: `${masuk}`,
+footerText: `Created By ɪ ᴀᴍ ʙᴏᴏsᴛ `, 
+buttons: gbutsan,
+headerType: 4 }
+			denz.sendMessage(mdata.id, buttonMessages, MessageType.buttonsMessage, {thumbnail: fs.readFileSync('./denz.jpg'), "contextInfo": { mentionedJid: [num]}, caption: 'Tes', quoted: fkontakk})
+			} else if (anu.action == 'remove') {
+			const welkom = JSON.parse(fs.readFileSync('./database/welkom.json'))
+        	if(!welkom.includes(mdata.id)) return
+			fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {})}, message: { "contactMessage":{"displayName": `${mdata.subject}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;Denz;;;\nFN:Denz\nitem1.TEL;waid=6281337541779:6281337541779\nitem1.X-ABLabel:Mobile\nEND:VCARD` }}}
+			num = anu.participants[0]
+			try {
+			ppimg = await denz.getProfilePicture(`${num.split('@')[0]}@c.us`)
+			} catch {
+			ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+			}
+			let buff = await getBuffer(ppimg)
+			keluar =`Ko @${num.split('@')[0]} keluar, padahal belum donasi`
+			gbutsan = [{buttonId:'SERAH',buttonText:{displayText:'BYE BYE BEBAN'},type:1}]
+			mhan = await denz.prepareMessage(mdata.id, buff, MessageType.image, {thumbnail: buff})
+const buttonMessages = { imageMessage: mhan.message.imageMessage,
+contentText: `${keluar}`,
+footerText: `Leave Information`,
+buttons: gbutsan,
+headerType: 4 }
+			denz.sendMessage(mdata.id, buttonMessages, MessageType.buttonsMessage, { thumbnail: fs.readFileSync('./denz.jpg'), "contextInfo": { mentionedJid: [num]}, caption: 'Tes', quoted: fkontakk})
+			} else if (anu.action == 'promote') {
+fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {})}, message: { "contactMessage":{"displayName": `${mdata.subject}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;Denz;;;\nFN:Denz\nitem1.TEL;waid=6281337541779:6281337541779\nitem1.X-ABLabel:Mobile\nEND:VCARD` }}}
+shp = '◦➛'
+var thu = await denz.getStatus(anu.participants[0], MessageType.text)
+num = anu.participants[0]
+teks = `*P R O M O T E - D E T E C T E D*\n\n${shp} Username: @${num.split('@')[0]}\n\n${shp} Bio : ${thu.status}\n\n${shp} Time : ${moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')}\n\n${shp} Group: ${mdata.subject}\n\nDon't break the rules!`
+denz.sendMessage(mdata.id, teks, MessageType.text, {contextInfo: {"mentionedJid": [num]}, quoted: fkontakk})
+console.log(color('|TRM|'), color(`Promote Member ${num.split('@')[0]} In ${mdata.subject}`,  'cyan'))
+} 
+else if (anu.action == 'demote') {
+fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {})}, message: { "contactMessage":{"displayName": `${mdata.subject}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;Denz;;;\nFN:Denz\nitem1.TEL;waid=6281337541779:6281337541779\nitem1.X-ABLabel:Mobile\nEND:VCARD` }}}
+shp = '◦➛'
+thu = await denz.getStatus(anu.participants[0], MessageType.text)
+num = anu.participants[0]
+teks = `*D E M O T E - D E T E C T E D*\n\n${shp} Username: @${num.split('@')[0]}\n\n${shp} Bio : ${thu.status}\n\n${shp} Time : ${moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')}\n\n${shp} Group: ${mdata.subject}`
+denz.sendMessage(mdata.id, teks, MessageType.text, {contextInfo: {"mentionedJid": [num]}, quoted: fkontakk})
+console.log(color('|TRM|'), color(`Demote Admin ${num.split('@')[0]} In ${mdata.subject}`,  'cyan'))
+}
+		    } catch (e) {
+			console.log('Error : %s', color(e, 'red'))
+		    }
+	        })	       
 
+	denz.on('group-update', async (anu) => {
+		const metdata = await denz.groupMetadata(anu.jid)
+    	const fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {})}, message: { "contactMessage":{"displayName": `${metdata.subject}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;Denz;;;\nFN:Denz\nitem1.TEL;waid=6285866295942:6285866295942\nitem1.X-ABLabel:Mobile\nEND:VCARD` }}}
+    if(anu.announce == 'false'){
+    teks = `- [ Group Opened ] -\n\n_Group telah dibuka oleh admin_\n_Sekarang semua member bisa mengirim pesan_`
+    denz.sendMessage(metdata.id, teks, MessageType.text, {quoted: fkontakk})
+    console.log(color('|TRM|'), color(`Group Opened In ${metdata.subject}`, 'cyan'))
+  }
+  else if(anu.announce == 'true'){
+    teks = `- [ Group Closed ] -\n\n_Group telah ditutup oleh admin_\n_Sekarang hanya admin yang dapat mengirim pesan_`
+    denz.sendMessage(metdata.id, teks, MessageType.text, {quoted: fkontakk})
+    console.log(color('|TRM|'), color(`Group Closed In ${metdata.subject}`,  'cyan'))
+  }
+  else if(!anu.desc == ''){
+    tag = anu.descOwner.split('@')[0] + '@s.whatsapp.net'
+    teks = `- [ Group Description Change ] -\n\nDeskripsi Group telah diubah oleh Admin @${anu.descOwner.split('@')[0]}\n• Deskripsi Baru : ${anu.desc}`
+    denz.sendMessage(metdata.id, teks, MessageType.text, {contextInfo: {"mentionedJid": [tag]}, quoted: fkontakk})
+    console.log(color('|TRM|'), color(`Group Description Change In ${metdata.subject}`, 'cyan'))
+  }
+  else if(anu.restrict == 'false'){
+    teks = `- [ Group Setting Change ] -\n\nEdit Group info telah dibuka untuk member\nSekarang semua member dapat mengedit info Group Ini`
+    denz.sendMessage(metdata.id, teks, MessageType.text, {quoted: fkontakk})
+    console.log(color('|TRM|'), color(`Group Setting Change In ${metdata.subject}`, 'cyan'))
+  }
+  else if(anu.restrict == 'true'){
+    teks = `- [ Group Setting Change ] -\n\nEdit Group info telah ditutup untuk member\nSekarang hanya admin group yang dapat mengedit info Group Ini`
+    denz.sendMessage(metdata.id, teks, MessageType.text, {quoted: fkontakk})
+    console.log(color('|TRM|'), color(`Group Setting Change In ${metdata.subject}`,  'cyan'))
+  }
+})
+
+denz.on('CB:action,,call', async json => {
+        const callerId = json[2][0][1].from;
+        var vcard = 'BEGIN:VCARD\n' + 'VERSION:3.0\n' + 'FN:' + `${NamaOwner}` + '\n' + `ORG:Developer ${NamaBot}\n` + 'TEL;type=CELL;type=VOICE;waid=' + `${NomorOwner}` + ':+' + `${NomorOwner}` + '\n' + 'END:VCARD'
+        denz.sendMessage(callerId, "\`\`\`[ ! ] CALL DETECTED [ ! ]\`\`\`\n\n\`\`\`Anda Di Block Karena Telepon Bot , Silahkan Hubungi Developer Bot Untuk Membuka Block\`\`\`", MessageType.text)
+        denz.sendMessage(callerId, { displayname: `${NamaOwner}`, vcard: vcard}, MessageType.contact, {contextInfo: { externalAdReply:{title: `Developer ${NamaBot}`,body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./denz.jpg'),sourceUrl:`https://wa.me/6285866295942?text=Assalamualaikum`}}})
+        await sleep(5000)
+        await denz.blockUser(callerId, "add")
+        })
         
 	denz.on('message-delete', async (m) => {
 if (!m.key.fromMe && antidelete) {
