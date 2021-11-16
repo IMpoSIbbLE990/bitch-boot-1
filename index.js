@@ -49,7 +49,7 @@ fakenomor = '0@s.whatsapp.net'
 const gcrevoke = ["6281804680327-1621430788@g.us"]
 prefix = '#'
 shp = '⬡'
-owner = "6285774523785@s.whatsapp.net"
+owner = "62838333100952@s.whatsapp.net"
 spc1 = '         '
 spc2 = '\n                           '
 spc3 = '                   '
@@ -88,7 +88,7 @@ console.log(color(`${spc2}[ • CREATOR BOT ${NamaOwner} • ]` ,'aqua'))
 console.log(color(`${spc4}< ================================================== >`, 'white'))
 console.log(color(`${spc3}[•]`, 'aqua'), color(`Hai        : ${ucapanWaktu}`, 'white'))
 console.log(color(`${spc4}< ================================================== >`, 'white'))
-console.log(color(`${spc3}[•]`, 'aqua'), color(`Bot Version : ${settings.VersionBot}`, 'white'))
+console.log(color(`${spc3}[•]`, 'aqua'), color(`Bot Version : ${VersionBot}`, 'white'))
 console.log(color(`${spc4}< ================================================== >`, 'white'))
 console.log(color(`${spc3}[•]`, 'aqua'), color(`Status      : Online!`, 'white'))
 console.log(color(`${spc4}< ================================================== >`, 'white'))
@@ -157,8 +157,7 @@ fetch(`http://ip-api.com/line`).then(res => res.text())
 			ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 			}
 			let buff = await getBuffer(ppimg)
-			masuk =`𝑿𝑿𝑿 Halo @${num.split('@')[0]}\nSelamat Datang Di ${mdata.subject}\n\n*Jangan Lupa Isi*\n*Nama* :\n*Umur* :\n*Gender* :\n*Askot* :\n\nEnjoy Jangan Lupa Kenalan 𝑿𝑿𝑿`
-			gbutsan = [{buttonId:'SERAH',buttonText:{displayText:'WELCOME BEBAN'},type:1}]
+			masuk =`𝑿𝑿𝑿 Halo @${num.split('@')[0]} 𝑿𝑿𝑿 \nSelamat Datang Di ${mdata.subject}\n\n*Jangan Lupa Isi*\n*Nama* :\n*Umur* :\n*Gender* :\n*Askot* :\n\nEnjoy Jangan Lupa Kenalan 𝑿𝑿𝑿`
 			mhan = await denz.prepareMessage(mdata.id, buff, MessageType.image, {thumbnail: buff})
 const buttonMessages = { imageMessage: mhan.message.imageMessage,
 contentText: `${masuk}`,
@@ -178,7 +177,6 @@ headerType: 4 }
 			}
 			let buff = await getBuffer(ppimg)
 			keluar =`Ko @${num.split('@')[0]} keluar, padahal belum donasi`
-			gbutsan = [{buttonId:'SERAH',buttonText:{displayText:'BYE BYE BEBAN'},type:1}]
 			mhan = await denz.prepareMessage(mdata.id, buff, MessageType.image, {thumbnail: buff})
 const buttonMessages = { imageMessage: mhan.message.imageMessage,
 contentText: `${keluar}`,
