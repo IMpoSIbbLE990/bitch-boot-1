@@ -49,7 +49,7 @@ fakenomor = '0@s.whatsapp.net'
 const gcrevoke = ["6281804680327-1621430788@g.us"]
 prefix = '#'
 shp = '⬡'
-owner = "62838333100952@s.whatsapp.net"
+owner = "6285774523785@s.whatsapp.net"
 spc1 = '         '
 spc2 = '\n                           '
 spc3 = '                   '
@@ -88,7 +88,7 @@ console.log(color(`${spc2}[ • CREATOR BOT ${NamaOwner} • ]` ,'aqua'))
 console.log(color(`${spc4}< ================================================== >`, 'white'))
 console.log(color(`${spc3}[•]`, 'aqua'), color(`Hai        : ${ucapanWaktu}`, 'white'))
 console.log(color(`${spc4}< ================================================== >`, 'white'))
-console.log(color(`${spc3}[•]`, 'aqua'), color(`Bot Version : ${VersionBot}`, 'white'))
+console.log(color(`${spc3}[•]`, 'aqua'), color(`Bot Version : ${settings.VersionBot}`, 'white'))
 console.log(color(`${spc4}< ================================================== >`, 'white'))
 console.log(color(`${spc3}[•]`, 'aqua'), color(`Status      : Online!`, 'white'))
 console.log(color(`${spc4}< ================================================== >`, 'white'))
