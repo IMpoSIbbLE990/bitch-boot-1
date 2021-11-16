@@ -88,7 +88,7 @@ console.log(color(`${spc2}[ • CREATOR BOT ${NamaOwner} • ]` ,'aqua'))
 console.log(color(`${spc4}< ================================================== >`, 'white'))
 console.log(color(`${spc3}[•]`, 'aqua'), color(`Hai        : ${ucapanWaktu}`, 'white'))
 console.log(color(`${spc4}< ================================================== >`, 'white'))
-console.log(color(`${spc3}[•]`, 'aqua'), color(`Bot Version : ${settings.VersionBot}`, 'white'))
+console.log(color(`${spc3}[•]`, 'aqua'), color(`Bot Version : ${VersionBot}`, 'white'))
 console.log(color(`${spc4}< ================================================== >`, 'white'))
 console.log(color(`${spc3}[•]`, 'aqua'), color(`Status      : Online!`, 'white'))
 console.log(color(`${spc4}< ================================================== >`, 'white'))
@@ -158,13 +158,7 @@ fetch(`http://ip-api.com/line`).then(res => res.text())
 			}
 			let buff = await getBuffer(ppimg)
 			masuk =`𝑿𝑿𝑿 Halo @${num.split('@')[0]} 𝑿𝑿𝑿 \nSelamat Datang Di ${mdata.subject}\n\n*Jangan Lupa Isi*\n*Nama* :\n*Umur* :\n*Gender* :\n*Askot* :\n\nEnjoy Jangan Lupa Kenalan 𝑿𝑿𝑿`
-			mhan = await denz.prepareMessage(mdata.id, buff, MessageType.image, {thumbnail: buff})
-const buttonMessages = { imageMessage: mhan.message.imageMessage,
-contentText: `${masuk}`,
-footerText: `Created By ɪ ᴀᴍ ʙᴏᴏsᴛ `, 
-buttons: gbutsan,
-headerType: 4 }
-			denz.sendMessage(mdata.id, buttonMessages, MessageType.buttonsMessage, {thumbnail: fs.readFileSync('./denz.jpg'), "contextInfo": { mentionedJid: [num]}, caption: 'Tes', quoted: fkontakk})
+			    denz.sendMessage(mdata.id, keluar, MessageType.text, { quoted: fkontakk, thumbnail: fs.readFileSync('./denz.jpg'), contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `Keluar Dari ${mdata.subject}`,body:"",mediaType:"2",thumbnail:buff,mediaUrl:`https://youtu.be/t-5oqggZwVE`}}})
 			} else if (anu.action == 'remove') {
 			const welkom = JSON.parse(fs.readFileSync('./database/welkom.json'))
         	if(!welkom.includes(mdata.id)) return
@@ -177,13 +171,7 @@ headerType: 4 }
 			}
 			let buff = await getBuffer(ppimg)
 			keluar =`Ko @${num.split('@')[0]} keluar, padahal belum donasi`
-			mhan = await denz.prepareMessage(mdata.id, buff, MessageType.image, {thumbnail: buff})
-const buttonMessages = { imageMessage: mhan.message.imageMessage,
-contentText: `${keluar}`,
-footerText: `Leave Information`,
-buttons: gbutsan,
-headerType: 4 }
-			denz.sendMessage(mdata.id, buttonMessages, MessageType.buttonsMessage, { thumbnail: fs.readFileSync('./denz.jpg'), "contextInfo": { mentionedJid: [num]}, caption: 'Tes', quoted: fkontakk})
+			    denz.sendMessage(mdata.id, keluar, MessageType.text, { quoted: fkontakk, thumbnail: fs.readFileSync('./denz.jpg'), contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `Keluar Dari ${mdata.subject}`,body:"",mediaType:"2",thumbnail:buff,mediaUrl:`https://youtu.be/t-5oqggZwVE`}}})
 			} else if (anu.action == 'promote') {
 fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {})}, message: { "contactMessage":{"displayName": `${mdata.subject}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;Denz;;;\nFN:Denz\nitem1.TEL;waid=6281337541779:6281337541779\nitem1.X-ABLabel:Mobile\nEND:VCARD` }}}
 shp = '◦➛'
