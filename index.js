@@ -14,6 +14,48 @@ const { color, bgcolor } = require('./lib/color')
 const { exec } = require('child_process')
 const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const settings = JSON.parse(fs.readFileSync('./settings.json'))
+const time2 = moment().tz("Asia/Jakarta").format("HH:mm:ss");
+    if (time2 < "24:59:00") {
+      var ucapanWaktu = "Selamat malam";
+    }
+    if (time2 < "19:00:00") {
+      var ucapanWaktu = "Selamat senja🌞";
+    }
+    if (time2 < "18:00:00") {
+      var ucapanWaktu = "Selamat sore🌄";
+    }
+    if (time2 < "15:00:00") {
+      var ucapanWaktu = "Selamat siang☀️";
+    }
+    if (time2 < "11:00:00") {
+      var ucapanWaktu = "Selamat pagi🌅";
+    }
+    if (time2 < "05:00:00") {
+      var ucapanWaktu = "Selamat malam🌃";
+    }
+const runtime = function (seconds) {
+  seconds = Number(seconds);
+  var d = Math.floor(seconds / (3600 * 24));
+  var h = Math.floor((seconds % (3600 * 24)) / 3600);
+  var m = Math.floor((seconds % 3600) / 60);
+  var s = Math.floor(seconds % 60);
+  var dDisplay = d > 0 ? d + (d == 1 ? " hari, " : " Hari, ") : "";
+  var hDisplay = h > 0 ? h + (h == 1 ? " jam, " : " Jam, ") : "";
+  var mDisplay = m > 0 ? m + (m == 1 ? " menit, " : " Menit, ") : "";
+  var sDisplay = s > 0 ? s + (s == 1 ? " detik" : " Detik") : "";
+  return dDisplay + hDisplay + mDisplay + sDisplay;
+};
+fakenomor = '0@s.whatsapp.net'
+const gcrevoke = ["6281804680327-1621430788@g.us"]
+prefix = '#'
+shp = '⬡'
+owner = "62838333100952@s.whatsapp.net"
+spc1 = '         '
+spc2 = '\n                           '
+spc3 = '                   '
+spc4 = '               '
+require("./denz.js");
+nocache("./denz.js", (module) => console.log(`${module} is now updated!`));
 const sleep = async (ms) => {
 return new Promise(resolve => setTimeout(resolve, ms))
 }
@@ -30,7 +72,35 @@ denz.autoReconnect = ReconnectMode.onConnectionLost
         console.log(color('|TRM|'), color('Scan this QR code', 'cyan'))
       })
     fs.existsSync('./QRnya.json') && denz.loadAuthInfo('./QRnya.json')
-    
+      denz.on("connecting", () => {
+    start("2", "Connecting...");
+  });
+      denz.on("open", () => {
+    success("2", "Connect Sukses > Jangan lupa subs");
+console.log(color(figlet.textSync(`${spc1}            SelfBot`, {
+font: 'Standard',
+horizontalLayout: 'default',
+vertivalLayout: 'default',
+width: 80,
+whitespaceBreak: false
+}), 'cyan'))
+console.log(color(`${spc2}[ • CREATOR BOT ${NamaOwner} • ]` ,'aqua'))
+console.log(color(`${spc4}< ================================================== >`, 'white'))
+console.log(color(`${spc3}[•]`, 'aqua'), color(`Hai        : ${ucapanWaktu}`, 'white'))
+console.log(color(`${spc4}< ================================================== >`, 'white'))
+console.log(color(`${spc3}[•]`, 'aqua'), color(`Bot Version : ${VersionBot}`, 'white'))
+console.log(color(`${spc4}< ================================================== >`, 'white'))
+console.log(color(`${spc3}[•]`, 'aqua'), color(`Status      : Online!`, 'white'))
+console.log(color(`${spc4}< ================================================== >`, 'white'))
+console.log(color(`${spc3}[•]`, 'aqua'), color(`Owner       : ${NamaOwner}`, 'white'))
+console.log(color(`${spc4}< ================================================== >`, 'white'))
+
+    console.log(color('--','aqua'), color('SCRIPT INI PRIVATE BIKINAN GW SENDIRI!!︎', 'white'))
+    console.log(color('--','aqua'), color('BERTEMAN? CHAT SAYA!', 'white'), color('https://wa.me/6285774523785'))
+    console.log(color('[SELF-BOT]','aqua'), color('IMP-XBOT WAS HERE!!', 'white'))
+    console.log(color('[DEV]', 'aqua'), color('HAI OWNER WELCOME', 'white'))
+    console.log(color('--','aqua'), color('THANKS', 'white'))
+  });
     denz.on('credentials-updated', () => {
         console.log(color('|TRM|'), color('credentials updated!', 'cyan'))
         })
