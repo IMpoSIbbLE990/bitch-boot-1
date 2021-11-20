@@ -107,8 +107,8 @@ isCharge: "" || false
 offline = true
 publik = false
 bugc = true
-waktuafk = 'Nothing'
-alasanafk = 'Nothing'
+waktuafk = '1.51'
+alasanafk = 'Jangan ganggu lagi turu'
 NamaBot = settings.NamaBot
 NomorOwner = settings.NomorOwner
 NamaOwner = settings.NamaOwner
