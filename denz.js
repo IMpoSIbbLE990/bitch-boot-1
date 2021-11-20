@@ -98,26 +98,24 @@ const autosticker = JSON.parse(fs.readFileSync('./database/autosticker.json'))
 ky_ttt = []
 tttawal= ["0️⃣","1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣"]
 cmhit = []
-autorespon = false
-antidelete = false
+autovn = true
+antidelete = true
 baterai = {
 battery: "" || "Tidak Terdeteksi",
 isCharge: "" || false
 }
-offline = false
+offline = true
 publik = false
-bugc = false
+bugc = true
 waktuafk = 'Nothing'
 alasanafk = 'Nothing'
 NamaBot = settings.NamaBot
 NomorOwner = settings.NomorOwner
 NamaOwner = settings.NamaOwner
-multi =false
+multi =true
 nopref = false
-allpref = true
+allpref = false
 autoread = false
-autocomposing = false
-autorecording = false
 
 // APIKEY
 HunterApi = settings.HunterApi
@@ -901,14 +899,11 @@ return reply(parse)
 			    denz.groupRemove(from, [kic]).catch((e) => { reply(mess.only.Badmin) })
 			}
                       }
-if (autorecording) {
-	if (autorecording === false) return
+// 𝘼𝙪𝙩𝙤 𝙑𝙣:𝙫
+if (autovn) {
+	if (autovn === false) return
 await denz.updatePresence(from, Presence.recording)
 } 
-if (autocomposing) {
-	if (autocomposing === false) return
-await denz.updatePresence(from, Presence.composing)
-}
 if (budy.startsWith('Denz')){
 sendButMessage(from, `${JSON.stringify(me, null, 2)}`, "*_© IMP-XBOT_*", [{buttonId: 'igm', buttonText: {displayText: 'Instagram'}, type: 1},{buttonId: 'ytm', buttonText: {displayText: 'YouTube'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
 }
@@ -991,8 +986,7 @@ reply('https://tinyurl.com/yg4k8bvg')
 │> ⬡Nama Bot : ${NamaBot}_
 │> ⬡Nama Owner : ${NamaOwner}_
 │> ⬡Nomor Owner : @${otod.split('@')[0]}_
-│> ⬡Auto Composing : ${autocomposing}_
-│> ⬡Auto Recording : ${autorecording}_
+│> ⬡Auto Recording : ${autovn}_
 
 ❏「 \`\`\`INFO USER\`\`\` 」
 
@@ -1075,7 +1069,7 @@ menu = `❏ 「 \`\`\`MENU OWNER\`\`\` 」
 ├ ${prefix}autorespon [ _on/off_ ]
 ├ ${prefix}antidelete [ _on/off_ ]
 ├ ${prefix}autoread [ _on/off_ ]
-├ ${prefix}fakevn [ _on/off_ ]
+├ ${prefix}autovn 
 ├ ${prefix}fakengetik [ _on/off_ ]
 ├ ${prefix}bc [ _teks/reply gif/image/video with caption_ ]
 ├ ${prefix}tobc [ _reply sticker/audio with caption_ ]
@@ -1600,19 +1594,21 @@ case 'fetch':
                     reply(mess.error.api)
                 }
                 break
-                case 'fakevn':
-      if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
-       if (args.length < 1) return reply(`Penggunaan ${prefix}fakevn on/off`)
-           if (c === 'on'){
-             autorecording = true
-                    reply(`Berhasil mengaktifkan fakevn`)
-                } else if (c === 'off'){
-                    autorecording = false
-                    reply(`Berhasil menonaktifkan fakevn`)
-                } else {
-                    reply(mess.error.api)
-                }
-                break
+                case 'autovn':
+if (!isOwner && !mek.key.fromMe) return
+if (args.length < 1) return reply('Pilih on atau off')
+if (args[0] === "on") {
+if (autovn === true) return
+autovn = true
+reply(`Succes mengaktifkan autovn`)
+} else if (args[0] === "off") {
+if (autovn === false) return
+autovn = false
+reply(`Succes mematikan autovn`)
+} else {
+reply(`Pilih on atau off`)
+}
+break
                 case 'setprefix':
       if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
        if (args.length < 1) return sendButMessage(from, `\`\`\`「 PREFIX SETTING 」\`\`\``, `Silahkan pilih salah satu`, [
@@ -2178,6 +2174,36 @@ emror = String(e)
 reply(`${e}`)
 }
 break
+case 'bitly':
+reply(mess.wait)
+if (args.length == 0) return reply(`Format salah! dibutuhkan (${prefix + command} (url with http://)) Example: ${prefix + command} http://panel.vinny.wtf/`)
+short = args.join(" ")
+ini_result = await fetchJson(`http://hadi-api.herokuapp.com/api/bitly?url=${short}`,{method:'get'})
+get_result = ini_result.result
+ini_txt = `bitly shortlink`
+ini_txt += `Shortlink : ${get_result}`
+reply (ini_txt)
+break
+case 'shorturl':
+ reply(mess.wait)
+ if (args.length == 0) return reply(`Format salah! dibutuhkan (${prefix + command} (url with http://)) Example: ${prefix + command} http://panel.vinny.wtf/`)
+short = args.join(" ")
+ini_result = await fetchJson(`http://hadi-api.herokuapp.com/api/shorturl?url=${short}`,{method:'get'})
+get_result = ini_result.result
+ini_txt = `shorturl shortlink`
+ini_txt += `Shortlink : ${get_result}`
+reply (ini_txt)
+break
+case 'cuttly':
+reply(mess.wait)
+if (args.length == 0) return reply(`Format salah! dibutuhkan (${prefix + command} (url with http://)) Example: ${prefix + command} http://panel.vinny.wtf/`)
+short = args.join(" ")
+ini_result = await fetchJson(`http://hadi-api.herokuapp.com/api/cuttly?url=${short}`,{method:'get'})
+get_result = ini_result.result
+ini_txt = `cuttly shortlink`
+ini_txt += `Shortlink : ${get_result}`
+reply (ini_txt)
+break 
     case 'tomp4':
             if ((isMedia && !mek.message.videoMessage || isQuotedSticker) && args.length == 0) {
             ger = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
